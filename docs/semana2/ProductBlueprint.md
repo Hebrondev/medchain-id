@@ -416,35 +416,45 @@ de blockchain deberá reconsiderarse.
 
 ------------------------------------------------------------------------
 
-# 1.10 Criterio para la construcción del tablero Kanban
+# 1.10 Backlog y tablero Kanban
 
-El backlog inicial deberá trasladarse a un tablero Kanban en GitHub
-Projects.
+El backlog inicial de MedChain ID se gestiona mediante un tablero Kanban en GitHub Projects, en lugar de mantenerse como una lista de tareas dentro de un archivo Markdown.
 
-Cada historia deberá convertirse en una tarjeta independiente y
-conservar como mínimo:
+El tablero contiene las historias de usuario priorizadas para el desarrollo inicial del producto y permite realizar seguimiento de su estado durante la ejecución del proyecto.
 
--   Identificador de la historia.
--   Título.
--   Historia de usuario en formato **Como \[rol\] quiero \[acción\] para
-    \[beneficio\]**.
--   Prioridad.
--   Criterios de aceptación.
--   Responsable, cuando sea definido por el equipo.
--   Estado dentro del flujo Kanban.
+**Tablero Kanban del proyecto:**
 
-La estructura recomendada para el tablero es:
+[MedChain ID — Product Backlog](https://github.com/users/Hebrondev/projects/1/views/1)
 
-``` text
-BACKLOG       TODO          IN PROGRESS       DONE
-   │            │                │              │
-   │            │                │              │
-   └────────────┴────────────────┴──────────────┘
-```
+### Estados del tablero
 
-Las historias P0 y P1 constituyen el conjunto inicial recomendado para
-el backlog. Las historias P2 deben permanecer identificadas como trabajo
-futuro y no mezclarse con el alcance mínimo del MVP.
+El flujo de trabajo definido para las historias es:
+
+- **Todo:** historias priorizadas pendientes de iniciar.
+- **In Progress:** historias actualmente en desarrollo.
+- **Done:** historias cuyos criterios de aceptación han sido cumplidos.
+
+### Historias incluidas en el backlog inicial
+
+El backlog inicial está compuesto por las historias P0 y P1 definidas en esta sección:
+
+| ID | Historia | Prioridad |
+|---|---|---|
+| US-01 | Identidad médica portable | P0 |
+| US-02 | Registro y vinculación de documentos médicos | P0 |
+| US-03 | Consulta y organización de registros médicos | P0 |
+| US-04 | Verificación de procedencia y autenticidad | P0 |
+| US-05 | Autorización para compartir información | P0 |
+| US-06 | Gestión y revocación de permisos | P0 |
+| US-07 | Trazabilidad de accesos | P0 |
+| US-08 | Atención médica entre instituciones | P1 |
+| US-09 | Verificación y onboarding de instituciones | P1 |
+| US-10 | Integración con sistemas HIS/EMR mediante API | P1 |
+| US-11 | Acceso de emergencia — Break-Glass | P1 |
+
+Cada tarjeta del tablero contiene la historia de usuario correspondiente y sus criterios de aceptación, que permiten determinar cuándo una funcionalidad puede considerarse completada.
+
+Las historias P2 —autorización temporal, alertas y notificaciones, y gestión de dependientes— permanecen documentadas como funcionalidades posteriores y no forman parte del backlog inicial del MVP.
 
 ------------------------------------------------------------------------
 
