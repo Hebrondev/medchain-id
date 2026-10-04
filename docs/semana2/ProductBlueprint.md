@@ -481,3 +481,320 @@ GitHub Projects.
 -   `docs/semana2/HernanDanielBriceno.md`
 -   `docs/semana2/AnaElizabethCulma.md`
 -   `docs/semana2/JohnFredyRojasCeballos.md`
+
+## 2. Propuesta de valor
+
+MedChain ID propone una identidad médica portable que ayude al paciente
+a reunir, consultar y compartir referencias verificables de sus
+registros de salud cuando estos provienen de diferentes instituciones,
+sistemas o países. La propuesta no busca reemplazar las historias
+clínicas existentes ni centralizar la información clínica. Su valor está
+en reducir la fricción que aparece cuando una persona debe reconstruir
+antecedentes, presentar documentos a un nuevo profesional o demostrar de
+dónde proviene un registro.
+
+Para el paciente, el beneficio esperado es mayor control sobre qué
+información comparte, con quién y durante cuánto tiempo, acompañado de
+evidencia verificable de procedencia. Para profesionales e
+instituciones, la propuesta busca facilitar la comprobación del origen
+de un documento y reducir verificaciones manuales en escenarios donde no
+existe una integración directa entre sistemas.
+
+MedChain ID se diferencia por tratar blockchain como una posible capa de
+confianza y no como repositorio de historias clínicas. Los datos
+clínicos permanecen bajo custodia de los sistemas responsables y la
+solución solo evaluará registrar en una infraestructura compartida las
+pruebas mínimas necesarias para verificar referencias, autorizaciones o
+eventos. Esta propuesta complementa, en lugar de sustituir, mecanismos
+nacionales como IHCE, y deberá demostrar mediante pruebas que aporta
+valor en escenarios donde una integración convencional no sea
+suficiente.
+
+------------------------------------------------------------------------
+
+## 3. Flujo de usuario
+
+El flujo principal comienza cuando el paciente dispone de una identidad
+MedChain ID y vincula a ella referencias de documentos emitidos por
+instituciones de salud. La institución conserva el documento clínico en
+su sistema o repositorio autorizado y, cuando corresponda, genera una
+referencia verificable asociada al documento. El paciente puede
+consultar sus registros y seleccionar cuáles desea compartir con un
+profesional o institución.
+
+Cuando un profesional recibe una referencia, el sistema verifica la
+procedencia declarada, la integridad de la referencia y el estado de la
+autorización. Si la autorización es válida, el profesional puede acceder
+al documento clínico mediante el mecanismo definido por la institución
+responsable, sin que MedChain ID tenga que convertirse en el repositorio
+central de la historia clínica. El acceso queda registrado para que el
+paciente pueda consultar posteriormente la trazabilidad correspondiente.
+
+En escenarios entre instituciones, el flujo busca permitir que el
+receptor obtenga evidencia verificable aun cuando no exista una
+integración directa previa. Para escenarios de emergencia,
+interoperabilidad avanzada o acceso temporal se utilizarían las
+capacidades P1 y P2 definidas en el backlog, después de validar el flujo
+básico.
+
+``` mermaid
+flowchart TD
+    A[Paciente identifica o registra su MedChain ID]
+    B[Institución registra referencia del documento]
+    C[Documento clínico permanece off-chain]
+    D[Paciente consulta sus registros]
+    E[Paciente selecciona información y autoriza acceso]
+    F[Profesional solicita el registro]
+    G[MedChain ID verifica procedencia, integridad y autorización]
+    H[Institución entrega el documento autorizado]
+    I[Acceso registrado para trazabilidad]
+
+    A --> B
+    B --> C
+    A --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+```
+
+------------------------------------------------------------------------
+
+## 4. Alcance del MVP
+
+El MVP de MedChain ID se limitará a demostrar el flujo fundamental de
+identidad, registro, consulta, verificación y control de acceso,
+evitando construir desde el inicio una plataforma completa de historia
+clínica. Dentro del alcance estarán: una identidad médica portable;
+registro de referencias a documentos clínicos; consulta y organización
+de registros; verificación de procedencia e integridad de referencias;
+autorización explícita para compartir información; gestión y revocación
+de permisos; y trazabilidad de accesos.
+
+La información clínica completa permanecerá fuera de la blockchain y
+bajo custodia de los sistemas responsables. El MVP deberá demostrar al
+menos un escenario controlado en el que un registro emitido por una
+entidad pueda ser vinculado al paciente, verificado y compartido con un
+receptor autorizado.
+
+Quedan fuera del MVP la integración completa con múltiples HIS/EMR, el
+acceso de emergencia Break-Glass, los permisos temporales, las
+notificaciones activas y la gestión de dependientes. También queda fuera
+la sustitución de IHCE o de los sistemas de historia clínica existentes.
+Estas capacidades corresponden a evoluciones posteriores del backlog y
+requieren validaciones adicionales de interoperabilidad, seguridad,
+gobernanza y regulación.
+
+------------------------------------------------------------------------
+
+## 5. Lean Canvas
+
+  -----------------------------------------------------------------------
+  Bloque                              Definición
+  ----------------------------------- -----------------------------------
+  **Problema**                        Información clínica fragmentada
+                                      entre instituciones, sistemas y
+                                      países; dificultad para localizar,
+                                      compartir y verificar registros
+                                      fuera de una integración común.
+
+  **Segmentos de usuarios**           Pacientes con atención en múltiples
+                                      instituciones o países;
+                                      profesionales que reciben pacientes
+                                      de otras redes; instituciones
+                                      prestadoras y laboratorios.
+
+  **Propuesta de valor única**        Una identidad médica portable que
+                                      permita presentar registros con
+                                      evidencia verificable de
+                                      procedencia y control de acceso,
+                                      sin centralizar la historia
+                                      clínica.
+
+  **Solución**                        Identidad portable, referencias
+                                      verificables de documentos,
+                                      autorización y revocación,
+                                      trazabilidad e integración
+                                      progresiva con sistemas
+                                      institucionales.
+
+  **Canales**                         Instituciones piloto,
+                                      profesionales, alianzas con actores
+                                      de interoperabilidad, comunidades
+                                      de innovación Stellar y pilotos
+                                      académicos/tecnológicos.
+
+  **Métricas clave**                  Tiempo para localizar un registro;
+                                      tiempo para verificar procedencia;
+                                      porcentaje de accesos autorizados
+                                      correctamente; porcentaje de
+                                      referencias verificables; adopción
+                                      por instituciones piloto; errores
+                                      de asociación o autorización.
+
+  **Ventaja diferencial**             Enfoque en portabilidad y
+                                      verificación entre organizaciones
+                                      autónomas, con datos clínicos fuera
+                                      de blockchain y posibilidad de
+                                      coexistir con IHCE.
+
+  **Estructura de costos**            Desarrollo y mantenimiento de
+                                      aplicaciones y API; almacenamiento
+                                      seguro off-chain; infraestructura y
+                                      observabilidad; seguridad;
+                                      cumplimiento y pruebas de
+                                      interoperabilidad; costos de
+                                      operación de la red.
+
+  **Fuentes de ingreso /              Inicialmente pilotos y financiación
+  sostenibilidad**                    de innovación; posteriormente
+                                      servicios B2B para integración,
+                                      verificación o infraestructura de
+                                      confianza, sujetos a validación de
+                                      mercado y regulación. No se plantea
+                                      cobrar al paciente por acceder a su
+                                      propia información.
+  -----------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+## 6. Arquitectura inicial
+
+La arquitectura propuesta separa deliberadamente la información clínica
+de la capa de confianza. En la capa de presentación existirían una
+aplicación para el paciente y una interfaz para profesionales o
+instituciones. Un backend/API actuaría como punto de orquestación,
+autenticación, autorización y auditoría, sin convertirse en custodio
+único de las historias clínicas.
+
+Los documentos clínicos permanecerían en los sistemas de las
+instituciones o en almacenamiento seguro off-chain. MedChain ID
+mantendría únicamente los metadatos mínimos necesarios para localizar un
+registro y, cuando sea pertinente, una referencia criptográfica que
+permita comprobar integridad y procedencia. Un servicio de verificación
+calcularía o comprobaría los compromisos criptográficos y validaría el
+estado de las autorizaciones.
+
+La capa Stellar se utilizaría únicamente para aquellos eventos que
+demuestren una necesidad real de registro compartido: por ejemplo, una
+referencia verificable, una atestación de una entidad o un evento de
+autorización que deba poder ser comprobado por participantes
+independientes. Soroban podría contener la lógica mínima de autorización
+y registro de estados verificables, mientras que los datos clínicos
+permanecerían fuera de la cadena. La arquitectura deberá aplicar
+minimización de datos y evitar incluir PII o contenido clínico
+innecesario en el ledger.
+
+``` mermaid
+flowchart TB
+    P[Paciente]
+    M[Profesional / Institución]
+    UI[Aplicación / Portal]
+    API[Backend / API de MedChain ID]
+    AUTH[Identidad, autorización y auditoría]
+    VER[Servicio de verificación]
+    OFF[Documentos clínicos y datos sensibles<br/>HIS / EMR / almacenamiento seguro]
+    ST[Stellar / Soroban<br/>referencias, atestaciones y estados mínimos]
+
+    P --> UI
+    M --> UI
+    UI --> API
+    API --> AUTH
+    API --> VER
+    API --> OFF
+    VER --> OFF
+    VER --> ST
+    AUTH --> ST
+```
+
+**Principio de separación:** la cadena no contiene la historia clínica.
+El sistema off-chain conserva el contenido clínico; Stellar se limita a
+la evidencia y lógica mínima que realmente requieran un registro
+compartido y verificable.
+
+------------------------------------------------------------------------
+
+## 7. Uso de Stellar y justificación
+
+Stellar es pertinente para MedChain ID únicamente en la parte del
+problema que requiere una capa compartida de confianza entre
+organizaciones que no deben depender de una única base de datos
+administrada por una de ellas. El ledger de Stellar mantiene un estado
+compartido y persistente, y Soroban permite ejecutar contratos
+inteligentes con almacenamiento y reglas de autorización. Esto permite
+explorar un registro verificable de referencias, estados de permisos o
+atestaciones sin trasladar la historia clínica completa a la red.
+
+Para el MVP, se propone evaluar un contrato Soroban que registre
+identificadores no reveladores, compromisos criptográficos y estados
+mínimos de autorización. Las firmas y mecanismos de autorización de
+Stellar pueden servir para demostrar que una operación fue autorizada
+por la cuenta correspondiente, mientras que el contenido clínico
+permanece off-chain. Soroban dispone de almacenamiento de datos en
+ledger, por lo que el diseño debe limitar estrictamente qué información
+se escribe y considerar exposición, retención, costos y gobernanza.
+
+La decisión de usar Stellar deberá validarse contra una alternativa
+convencional. Si una base de datos federada, firmas digitales e
+interoperabilidad existente ofrecen la misma confianza, privacidad,
+gobernanza y costo, blockchain no sería necesaria. En consecuencia,
+Stellar es un componente experimental de confianza y no el repositorio
+de datos médicos.
+
+### Componentes de Stellar considerados
+
+  -----------------------------------------------------------------------
+  Componente              Uso propuesto           Justificación
+  ----------------------- ----------------------- -----------------------
+  **Stellar Ledger**      Registrar evidencia     Proporciona un estado
+                          mínima y verificable    compartido que puede
+                                                  ser consultado por
+                                                  participantes
+                                                  independientes.
+
+  **Soroban**             Implementar reglas de   Permite ejecutar lógica
+                          autorización y estados  programable y mantener
+                          verificables            datos de contrato en el
+                                                  ledger.
+
+  **Cuentas y firmas**    Autorizar operaciones   Permiten asociar
+                          de pacientes o          operaciones con una
+                          entidades según el      autoridad criptográfica
+                          diseño                  verificable.
+
+  **Eventos /             Evidencia de            Permiten observar y
+  transacciones**         operaciones relevantes  auditar cambios
+                                                  asociados a la lógica
+                                                  implementada.
+  -----------------------------------------------------------------------
+
+### Límites deliberados
+
+MedChain ID **no almacenará historias clínicas completas, diagnósticos,
+resultados, imágenes, documentos PDF ni otros datos clínicos
+identificables directamente en Stellar**. La arquitectura deberá
+minimizar también metadatos que puedan permitir reidentificación.
+
+La propuesta deberá probar que el uso de Stellar aporta una propiedad
+que una alternativa convencional no ofrece con igual nivel de confianza,
+privacidad, interoperabilidad y costo. Si esa hipótesis no se confirma,
+el proyecto deberá reducir o retirar el componente blockchain.
+
+------------------------------------------------------------------------
+
+## Fuentes complementarias para la sección de Stellar
+
+-   Stellar Development Foundation. **Ledgers --- Stellar Docs:**
+    https://developers.stellar.org/docs/learn/fundamentals/stellar-data-structures/ledgers
+-   Stellar Development Foundation. **Smart Contracts --- Stellar
+    Docs:**
+    https://developers.stellar.org/docs/learn/fundamentals/stellar-data-structures/contracts
+-   Stellar Development Foundation. **Authorization --- Stellar Docs:**
+    https://developers.stellar.org/docs/learn/fundamentals/contract-development/authorization
+-   Stellar Development Foundation. **Persisting Data --- Stellar
+    Docs:**
+    https://developers.stellar.org/docs/learn/fundamentals/contract-development/storage/persisting-data
+-   Stellar Development Foundation. **Signatures and Multisig ---
+    Stellar Docs:**
+    https://developers.stellar.org/docs/learn/fundamentals/transactions/signatures-multisig
