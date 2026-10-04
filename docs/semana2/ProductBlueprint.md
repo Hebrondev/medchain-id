@@ -113,7 +113,7 @@ propusieron la necesidad funcional correspondiente.
 
 ------------------------------------------------------------------------
 
-# 1.4 Priorización P0 --- Núcleo del MVP
+### 1.4 Priorización P0 --- Núcleo del MVP
 
 Las siguientes historias conforman el núcleo inicial recomendado para
 MedChain ID.
@@ -192,7 +192,7 @@ historia clínica.
 
 ------------------------------------------------------------------------
 
-# 1.5 Priorización P1 --- Evolución y escalabilidad
+### 1.5 Priorización P1 --- Evolución y escalabilidad
 
 Las siguientes historias se consideran de alta importancia, pero se
 recomienda incorporarlas después de validar el núcleo del MVP.
@@ -244,7 +244,7 @@ gobernanza, auditoría y tratamiento de información clínica sensible.
 
 ------------------------------------------------------------------------
 
-# 1.6 Priorización P2 --- Funcionalidades posteriores
+### 1.6 Priorización P2 --- Funcionalidades posteriores
 
 Estas historias se consideran evoluciones del producto que pueden
 incorporarse después de validar el flujo principal.
@@ -285,7 +285,7 @@ inicialmente el flujo principal de MedChain ID.
 
 ------------------------------------------------------------------------
 
-# 1.7 Backlog inicial recomendado
+### 1.7 Backlog inicial recomendado
 
 Para el primer backlog del producto se recomienda seleccionar las
 historias **P0 y P1**, dejando las historias P2 como funcionalidades
@@ -313,7 +313,7 @@ Las historias P2 quedan registradas como posibles evoluciones:
 
 ------------------------------------------------------------------------
 
-# 1.8 Flujo funcional priorizado
+### 1.8 Flujo funcional priorizado
 
 La priorización permite representar el flujo principal del producto de
 la siguiente manera:
@@ -381,7 +381,7 @@ dependencia conceptual utilizada para justificar la priorización.
 
 ------------------------------------------------------------------------
 
-# 1.9 Consideración sobre blockchain
+### 1.9 Consideración sobre blockchain
 
 La priorización no presupone que todas las historias requieran
 blockchain.
@@ -416,7 +416,7 @@ de blockchain deberá reconsiderarse.
 
 ------------------------------------------------------------------------
 
-# 1.10 Backlog y tablero Kanban
+### 1.10 Backlog y tablero Kanban
 
 El backlog inicial de MedChain ID se gestiona mediante un tablero Kanban en GitHub Projects, en lugar de mantenerse como una lista de tareas dentro de un archivo Markdown.
 
